@@ -1,17 +1,26 @@
 /*Name this external file gallery.js*/
 
 function upDate(previewPic){
-        console.log('Cargando Imagen...')
-    
+        console.log("Evento upDate disparado");
+        console.log("Alt: ", previewPic.alt);
+        console.log("Fuente: ", previewPic.src);
+        
+        // Cambiar el texto del elemento con id "image"
+        document.getElementById('image').textContent = previewPic.alt;
+        
+        // Cambiar la imagen de fondo del elemento con id "image"
         document.getElementById('image').style.backgroundImage = "url('" + previewPic.src + "')";
-        document.getElementById('image').innerHTML = previewPic.alt;
+
 
        }
    
        function unDo(){
-        console.log('CRestaurando Div')
-
-       document.getElementById('image').style.backgroundImage = "url('')";
-       document.getElementById('image').innerHTML = "Hover over an image below to display here.";
-   
+        console.log("Evento unDo disparado");
+    
+        // Restaurar la imagen de fondo original del elemento con id "image"
+        document.getElementById('image').style.backgroundImage = "url('')";
+        
+        // Restaurar el texto original del elemento con id "image"
+        document.getElementById('image').textContent = "Hover over an image below to display here.";
+     
        }
